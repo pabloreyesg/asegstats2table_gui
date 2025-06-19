@@ -3,6 +3,15 @@ from tkinter import ttk, messagebox, filedialog
 import subprocess
 import os
 
+# Function to check if asegstats2table is installed
+def check_asegstats2table():
+    try:
+        # Try running the command to check if it's installed
+        subprocess.run(['asegstats2table', '--help'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        return True  # Command is available
+    except subprocess.CalledProcessError:
+        return False  # Command failed, it's not available
+
 # Function to get the value of $SUBJECTS_DIR
 def get_subjects_dir():
     subjects_dir = os.getenv('SUBJECTS_DIR', 'SUBJECTS_DIR is not defined')
@@ -28,6 +37,11 @@ def set_output_dir():
 
 # Function to execute the command with the selected parameters
 def run_command():
+    # Check if asegstats2table is installed
+    if not check_asegstats2table():
+        messagebox.showerror("Error", "asegstats2table is not installed. Please install it and try again.")
+        return
+
     # Get the selected subjects file
     subjects_file = subjects_file_var.get()
 
@@ -141,5 +155,8 @@ mean_cb.pack()
 
 # Button to run the command
 run_button = ttk.Button(root, text="Run", command=run_command)
-run_button_
+run_button.pack(pady=20)
+
+# Display the interface
+root.mainloop()
 
