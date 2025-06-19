@@ -26,8 +26,12 @@ pip install tk
 
 ## How to use
 
+1. Use in Linux
+2. Download the file asegui.py
+3. Open a terminal
+
 ```bash
-piython asegui.py
+python asegui.py
 ```
 
 ## Example Workflow:
