@@ -22,4 +22,20 @@ Install the required dependencies using:
 
 ```bash
 pip install tk
+```
+
+## How to use
+
+```bash
+piython asegui.py
+```
+
+## Example Workflow:
+1. Click "Select SUBJECTS_DIR folder" to choose the directory where your subject data is stored.
+2. Click "Select file" to choose your listsubject.txt file.
+3. Select the measures you want to calculate (e.g., Volume and Standard Deviation (std)).
+4. Click "Select output directory" to choose where the results should be saved.
+5. Finally, click "Run" to generate the CSV files.
+
+
 

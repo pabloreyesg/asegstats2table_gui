@@ -3,6 +3,16 @@ from tkinter import ttk, messagebox, filedialog
 import subprocess
 import os
 
+
+# Developed by: Pablo Reyes
+# For inquiries, contact: pabloreyesg@gmail.com
+#
+# This script provides a graphical user interface (GUI) for the `asegstats2table` command 
+# from FreeSurfer, used to generate statistical tables from FreeSurfer segmentations.
+# The interface allows users to select the input directories, choose the measures to calculate, 
+# and specify where to save the generated files.
+
+
 # Function to check if asegstats2table is installed
 def check_asegstats2table():
     try:
